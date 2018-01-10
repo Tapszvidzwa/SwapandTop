@@ -4,53 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/login_relativeLayout"
     android:background="@drawable/login_screen_background"
     tools:context="com.example.tapiwa.swapandtop.LoginScreen">
 
+
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="30dp"
+      android:alpha="0.4"
+      android:orientation="vertical"
+      android:layout_centerHorizontal="true">
+
     <EditText
         android:id="@+id/login_firstName"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
         android:ems="12"
-        android:inputType="textPersonName"
-        android:text="First name" />
+        android:hint="First Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/login_lastName"
-        android:layout_width="100dp"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/login_firstName"
         android:layout_below="@+id/login_firstName"
-        android:layout_marginTop="21dp"
         android:ems="13"
-        android:inputType="textPersonName"
-        android:text="Last name" />
+        android:hint="Last Name"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/email_address"
-        android:layout_width="wrap_content"
+        android:id="@+id/login_phonenumber"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/login_firstName"
-        android:layout_below="@+id/login_firstName"
-        android:layout_marginTop="21dp"
+        android:layout_alignStart="@+id/login_lastName"
+        android:layout_below="@+id/login_lastName"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Last name" />
+        android:hint="Phone Number"
+        android:inputType="phone" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/login_firstName"
-        android:layout_below="@+id/login_firstName"
-        android:layout_marginTop="21dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Last name" />
-
-
+  </LinearLayout>
 
 </RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "197721967914",
+    "firebase_url": "https://swapandtop.firebaseio.com",
+    "project_id": "swapandtop",
+    "storage_bucket": "swapandtop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197721967914:android:007f1293d1ccaecf",
+        "android_client_info": {
+          "package_name": "com.example.tapiwa.swapandtop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197721967914-udjgf279v9kuef26t5cpj2rfnelsf20j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tapiwa.swapandtop",
+            "certificate_hash": "1827d333342d27848a32276d6aa021a068cef869"
+          }
+        },
+        {
+          "client_id": "197721967914-nrlemsu1qglr49b1m0uk73bodfjtbj1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl4Q9NaEN-k3q1kxBbSgeH6eLnkA8Zyag"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197721967914-nrlemsu1qglr49b1m0uk73bodfjtbj1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
