@@ -1,6 +1,34 @@
 <resources>
     <string name="app_name">Swap and Top</string>
 
+    <!-- Strings related to EditTexts -->
+    <string name="login_last_name">Last Name</string>
+    <string name="login_phone_number">Phone Number</string>
+    <string name="login_first_name">First Name</string>
+
     <!-- Strings related to buttons -->
     <string name="send_verification_code">Send Verification Code</string>
+
+
+    <!-- Strings related to sharedPreferences -->
+    <string name="shared_preferences_file">shared_preferences</string>
+
+
+    <!-- Strings related to UI responses -->
+    <string name="invalid_first_name">Please enter First Name here</string>
+    <string name="invalid_last_name">Please enter Last Name here</string>
+    <string name="invalid_phone_number">Please enter Phone Number here</string>
+    <string name="invalid_country_code">Please include country code</string>
+    <string name="waiting_to_detect_msg">Waiting to automatically detect verification code</string>
+
+    <string name="code_not_received">Failed to detect code sent, please make sure you entered the
+    correct phonenumber including the country code. If this message persists, please try again
+        later</string>
+    <string name="account_creation_successful">Account created</string>
+
+    <!-- Strings related to Firebase References -->
+    <string name="users_db_ref">Users</string>
+
+
+
 </resources>
