@@ -177,7 +177,7 @@ public class LoginScreen extends AppCompatActivity {
                             uid = mAuth.getUid().toString();
 
 
-                            //compile user data
+                            //compile user data .
                             User newUser = new User();
                             newUser.setFirstName(firstName);
                             newUser.setLastName(lastName);
