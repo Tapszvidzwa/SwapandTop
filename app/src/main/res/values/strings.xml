@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Swap and Top</string>
+
+    <!-- Strings related to buttons -->
+    <string name="send_verification_code">Send Verification Code</string>
 </resources>

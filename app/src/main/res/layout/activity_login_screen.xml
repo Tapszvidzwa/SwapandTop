@@ -12,26 +12,26 @@
   <LinearLayout
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginTop="30dp"
-      android:alpha="0.4"
+      android:layout_marginTop="25dp"
+      android:background="@drawable/curved_edit_txtv"
       android:orientation="vertical"
-      android:layout_centerHorizontal="true">
+      android:layout_centerHorizontal="true"
+      android:id="@+id/linearLayout">
 
     <EditText
         android:id="@+id/login_firstName"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
         android:ems="12"
         android:hint="First Name"
         android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/login_lastName"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
         android:layout_alignStart="@+id/login_firstName"
         android:layout_below="@+id/login_firstName"
         android:ems="13"
@@ -40,8 +40,9 @@
 
     <EditText
         android:id="@+id/login_phonenumber"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="2dp"
         android:layout_alignStart="@+id/login_lastName"
         android:layout_below="@+id/login_lastName"
         android:ems="10"
@@ -49,5 +50,17 @@
         android:inputType="phone" />
 
   </LinearLayout>
+
+  <Button
+      android:id="@+id/send_verification_code"
+      android:backgroundTint="@color/colorAccent"
+      android:textColor="@android:color/white"
+      android:layout_width="match_parent"
+      android:layout_marginRight="20dp"
+      android:layout_marginLeft="20dp"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_marginBottom="14dp"
+      android:text="@string/send_verification_code" />
 
 </RelativeLayout>
