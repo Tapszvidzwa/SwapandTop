@@ -1,23 +1,19 @@
-package com.example.tapiwa.swapandtop;
+package com.example.tapiwa.swapandtop.Authentication;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tapiwa.swapandtop.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -32,7 +28,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginScreen extends AppCompatActivity {
+import FrontPage.FrontPageActivity;
+
+public class LoginScreenActivity extends AppCompatActivity {
 
     private EditText firstNameTxtV, lastNameTxtV, phoneNumberTxtV;
     private ProgressDialog verificationProgress;
@@ -145,7 +143,7 @@ public class LoginScreen extends AppCompatActivity {
                   new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                       @Override
                       public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-                            verificationProgress.dismiss();
+                            verificationProgress.setMessage("Creating account...");
                             signInWithPhoneAuthCredential(phoneAuthCredential);
                       }
 
@@ -205,15 +203,20 @@ public class LoginScreen extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
 
+                                    verificationProgress.dismiss();
+
                                     Toast.makeText(
                                             getApplicationContext(),
                                             getString(R.string.account_creation_successful),
                                             Toast.LENGTH_SHORT).show();
 
-                                    //Move to the account
+                                    Intent openFrontPage = new Intent(
+                                            LoginScreenActivity.this,
+                                            FrontPageActivity.class);
+                                    startActivity(openFrontPage);
+
                                 }
                             });
-
 
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
@@ -221,6 +224,10 @@ public class LoginScreen extends AppCompatActivity {
                             FirebaseUser user = task.getResult().getUser();
                             // ...
                         } else {
+
+
+                            //todo display message that user failed to login
+
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
@@ -230,19 +237,6 @@ public class LoginScreen extends AppCompatActivity {
                     }
                 });
     }
-
-
-
-
-
-
-
-
-
-
-    //check to see that the last name has been entered correctly
-    //check to see that the phone number has been entered correctly
-    //waiting to automatically detect code sent to your phone
     //if 1:30 seconds elapses then ask user to manually enter code by themselves
 
 
