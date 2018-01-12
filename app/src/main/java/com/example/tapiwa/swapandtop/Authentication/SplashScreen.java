@@ -7,17 +7,22 @@ import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tapiwa.swapandtop.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import FrontPage.FrontPageActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
     private TextView appNameTxtV;
-    private FirebaseAuth mAuth;
+    private ImageView appLogo;
+    public FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +31,18 @@ public class SplashScreen extends AppCompatActivity {
 
         appNameTxtV = findViewById(R.id.splash_screen_appname);
         mAuth = FirebaseAuth.getInstance();
+        appLogo = findViewById(R.id.app_logo);
 
+        //app name fade in
         ObjectAnimator fadeIn = ObjectAnimator.ofFloat(appNameTxtV, "alpha", 0f, 1f);
-        fadeIn.setDuration(2000);
+        fadeIn.setDuration(3000);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.play(fadeIn);
         animatorSet.start();
 
+        //app logo fade in
+        Animation myFadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in_logo);
+        appLogo.startAnimation(myFadeInAnimation);
 
         Thread myThread = new Thread() {
             @Override
@@ -43,8 +53,9 @@ public class SplashScreen extends AppCompatActivity {
                     mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
                         @Override
                         public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
                             if(firebaseAuth.getUid() != null) {
-                                Intent openFrontPage = new Intent(SplashScreen.this, FrontPageActivity.class);
+                                Intent openFrontPage = new Intent(SplashScreen.this,  FrontPageActivity.class);
                                 startActivity(openFrontPage);
                             } else {
                                 Intent openRegistrationPage = new Intent(SplashScreen.this, LoginScreenActivity.class);

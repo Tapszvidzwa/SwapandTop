@@ -11,6 +11,7 @@
 
   <LinearLayout
       android:layout_width="wrap_content"
+      android:alpha="0.5"
       android:layout_height="wrap_content"
       android:layout_marginTop="25dp"
       android:background="@drawable/curved_edit_txtv"
