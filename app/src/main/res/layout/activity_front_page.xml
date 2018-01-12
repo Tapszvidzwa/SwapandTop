@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/login_relativeLayout"
     android:background="@drawable/login_screen_background"
-    tools:context="com.example.tapiwa.swapandtop.Authentication.LoginScreenActivity">
+    tools:context="com.example.tapiwa.swapandtop.SwapandTop.Authentication.LoginScreenActivity">
 
 <EditText
     android:layout_width="match_parent"

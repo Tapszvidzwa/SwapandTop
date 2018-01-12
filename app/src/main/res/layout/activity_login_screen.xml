@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_screen_background"
     android:id="@+id/login_relativeLayout"
-    tools:context="com.example.tapiwa.swapandtop.Authentication.LoginScreenActivity">
+    tools:context="com.example.tapiwa.swapandtop.SwapandTop.Authentication.LoginScreenActivity">
 
 
   <LinearLayout

@@ -1,7 +1,10 @@
-package com.example.tapiwa.swapandtop.Authentication;
+package com.example.tapiwa.swapandtop.SwapandTop.Authentication;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
@@ -14,6 +17,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tapiwa.swapandtop.R;
+import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage;
+import com.example.tapiwa.swapandtop.SwapandTop.User.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -25,10 +30,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.concurrent.TimeUnit;
-
-import FrontPage.FrontPageActivity;
 
 public class LoginScreenActivity extends AppCompatActivity {
 
@@ -39,6 +41,7 @@ public class LoginScreenActivity extends AppCompatActivity {
     public static PhoneAuthCredential phoneCredential;
     private FirebaseAuth mAuth;
     private DatabaseReference usersDbRef;
+    public Activity thisActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public class LoginScreenActivity extends AppCompatActivity {
         phoneNumberTxtV = findViewById(R.id.login_phonenumber);
         sendVerificationBtn = findViewById(R.id.send_verification_btn);
         verificationProgress = new ProgressDialog(this);
+        thisActivity = this;
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -137,7 +141,7 @@ public class LoginScreenActivity extends AppCompatActivity {
 
           PhoneAuthProvider.getInstance().verifyPhoneNumber(
                   phoneNumberTxtV.getText().toString(),        // Phone number to verify
-                  60,                 // Timeout duration
+                  5,                 // Timeout duration
                   TimeUnit.SECONDS,   // Unit of timeout
                   this,               // Activity (for callback binding)
                   new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -151,6 +155,29 @@ public class LoginScreenActivity extends AppCompatActivity {
                       public void onVerificationFailed(FirebaseException e) {
                         verificationProgress.dismiss();
                         //show message that account registration failed
+
+                          //todo display message that user failed to login
+                          final AlertDialog.Builder builder = new AlertDialog.Builder(thisActivity);
+                          builder.setMessage(getString(R.string.code_not_received));
+
+                          builder.setPositiveButton(R.string.alert_dialogue_send_code_again,
+                                  new DialogInterface.OnClickListener() {
+                                      @Override
+                                      public void onClick(DialogInterface dialogInterface, int i) {
+                                          sendVerificationCode();
+                                      }
+                                  });
+
+                          builder.setNegativeButton(R.string.alert_dialogue_edit_number, new DialogInterface.OnClickListener() {
+                              @Override
+                              public void onClick(DialogInterface dialogInterface, int i) {
+                              }
+                          });
+
+                          builder.show();
+
+
+
 
                       }
                   });
@@ -212,8 +239,9 @@ public class LoginScreenActivity extends AppCompatActivity {
 
                                     Intent openFrontPage = new Intent(
                                             LoginScreenActivity.this,
-                                            FrontPageActivity.class);
+                                            FrontPage.class);
                                     startActivity(openFrontPage);
+                                    thisActivity.finish();
 
                                 }
                             });
@@ -224,10 +252,6 @@ public class LoginScreenActivity extends AppCompatActivity {
                             FirebaseUser user = task.getResult().getUser();
                             // ...
                         } else {
-
-
-                            //todo display message that user failed to login
-
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {

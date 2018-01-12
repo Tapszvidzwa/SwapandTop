@@ -1,4 +1,4 @@
-package com.example.tapiwa.swapandtop.Authentication;
+package com.example.tapiwa.swapandtop.SwapandTop.User;
 
 /**
  * Created by tapiwa on 1/10/18.
