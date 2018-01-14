@@ -7,16 +7,19 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tapiwa.swapandtop.R;
+import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends Activity {
 
     private TextView appNameTxtV;
     private ImageView appLogo;
@@ -26,8 +29,8 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash_screen);
-
         appNameTxtV = findViewById(R.id.splash_screen_appname);
         mAuth = FirebaseAuth.getInstance();
         appLogo = findViewById(R.id.app_logo);
@@ -54,8 +57,10 @@ public class SplashScreen extends AppCompatActivity {
                         @Override
                         public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
-                            if(firebaseAuth.getUid() != null) {
-                                Intent openFrontPage = new Intent(SplashScreen.this, LoginScreenActivity.class);
+                            FirebaseUser user =  firebaseAuth.getCurrentUser();
+
+                            if(user != null) {
+                                Intent openFrontPage = new Intent(SplashScreen.this,FrontPage.class);
                                 startActivity(openFrontPage);
                                 thisActivity.finish();
                             } else {
