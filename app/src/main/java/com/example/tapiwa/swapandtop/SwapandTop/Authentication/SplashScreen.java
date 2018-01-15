@@ -30,6 +30,7 @@ public class SplashScreen extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_splash_screen);
+
         appNameTxtV = findViewById(R.id.splash_screen_appname);
         mAuth = FirebaseAuth.getInstance();
         appLogo = findViewById(R.id.app_logo);
@@ -37,7 +38,7 @@ public class SplashScreen extends Activity {
 
         //app name fade in
         ObjectAnimator fadeIn = ObjectAnimator.ofFloat(appNameTxtV, "alpha", 0f, 1f);
-        fadeIn.setDuration(3000);
+        fadeIn.setDuration(2800);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.play(fadeIn);
         animatorSet.start();
@@ -50,7 +51,7 @@ public class SplashScreen extends Activity {
             @Override
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(2800);
 
                     mAuth.addAuthStateListener(new FirebaseAuth.AuthStateListener() {
                         @Override

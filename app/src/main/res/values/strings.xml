@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Swap and Top</string>
+    <string name="app_name">Swap&amp;Top</string>
 
     <!-- Strings related to EditTexts -->
     <string name="login_last_name">Last Name</string>
