@@ -5,48 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/login_relativeLayout"
-    android:background="@drawable/login_screen_background"
     tools:context="com.example.tapiwa.swapandtop.SwapandTop.Authentication.LoginScreenActivity">
 
 
     <TextView
         android:id="@+id/vehicles"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:text="vehicles"
-        android:gravity="center"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:text="Vehicles"
+        android:paddingTop="50dp"
+        android:gravity="top|center_horizontal"
+        android:textSize="25dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/car_images"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="32dp"
    />
 
     <TextView
         android:id="@+id/electronics"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:gravity="center"
+        android:layout_width="160dp"
+        android:layout_height="190dp"
+        android:paddingTop="50dp"
+        android:gravity="top|center_horizontal"
+        android:textSize="25dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/electronics"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/vehicles"
-        android:layout_marginEnd="54dp"
-        android:text="electronics" />
+        android:text="Electronics" />
 
     <TextView
         android:id="@+id/furniture"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:gravity="center"
+        android:layout_width="160dp"
+        android:paddingTop="50dp"
+        android:layout_height="190dp"
+        android:gravity="top|center_horizontal"
+        android:textSize="25dp"
+        android:background="@drawable/furniture"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/vehicles"
-        android:layout_marginBottom="119dp"
-        android:text="furniture" />
+        android:layout_marginBottom="32dp"
+        android:text="Furniture" />
 
     <TextView
         android:id="@+id/jewellery"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:gravity="center"
+        android:layout_width="160dp"
+        android:paddingTop="50dp"
+        android:layout_height="190dp"
+        android:gravity="top|center_horizontal"
+        android:textSize="25dp"
+        android:background="@drawable/jewellery"
         android:layout_alignBottom="@+id/furniture"
         android:layout_alignStart="@+id/electronics"
         android:text="Jewellery" />
+
+    <TextView
+        android:id="@+id/middle_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@color/colorAccent"
+        android:layout_centerInParent="true"
+        android:text="@string/front_page" />
+
 </RelativeLayout>

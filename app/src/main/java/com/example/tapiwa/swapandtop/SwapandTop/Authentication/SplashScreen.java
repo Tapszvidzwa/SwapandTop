@@ -5,7 +5,6 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -14,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tapiwa.swapandtop.R;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage;
+import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage.FrontPageActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -60,11 +59,11 @@ public class SplashScreen extends Activity {
                             FirebaseUser user =  firebaseAuth.getCurrentUser();
 
                             if(user != null) {
-                                Intent openFrontPage = new Intent(SplashScreen.this,FrontPage.class);
+                                Intent openFrontPage = new Intent(SplashScreen.this,FrontPageActivity.class);
                                 startActivity(openFrontPage);
                                 thisActivity.finish();
                             } else {
-                                Intent openRegistrationPage = new Intent(SplashScreen.this, LoginScreenActivity.class);
+                                Intent openRegistrationPage = new Intent(SplashScreen.this, FrontPageActivity.class);
                                 startActivity(openRegistrationPage);
                                 thisActivity.finish();
                             }

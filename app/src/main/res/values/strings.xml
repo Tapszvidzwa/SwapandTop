@@ -15,6 +15,9 @@
     <!-- Strings related to sharedPreferences -->
     <string name="shared_preferences_file">shared_preferences</string>
 
+    <!-- Strings related to Activities and Fragments -->
+    <string name="front_page">Select category</string>
+
 
     <!-- Strings related to UI responses -->
     <string name="invalid_first_name">Please enter First Name here</string>

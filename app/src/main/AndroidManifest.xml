@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SwapandTop.Authentication.LoginScreenActivity"></activity>
+        <activity android:name=".SwapandTop.Authentication.LoginScreenActivity" />
         <activity android:name=".FrontPage.FrontPageActivity" />
         <activity android:name=".SwapandTop.Authentication.SplashScreen">
             <intent-filter>
@@ -18,7 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SwapandTop.MainFrontPage.FrontPage"></activity>
+        <activity android:name=".SwapandTop.MainFrontPage.FrontPage.FrontPageActivity" />
+        <activity android:name=".SwapandTop.MainFrontPage.Electronics.ElectronicsFrontPageActivity" />
+        <activity android:name=".SwapandTop.MainFrontPage.Cars.CarsFrontPageActivity" />
+        <activity android:name=".SwapandTop.MainFrontPage.Furniture.FurnitureFrontPageActivity" />
+        <activity android:name=".SwapandTop.MainFrontPage.Jewellery.JewelleryFrontPageActivity"></activity>
     </application>
 
 </manifest>
