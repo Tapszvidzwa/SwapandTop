@@ -23,5 +23,14 @@
     </GridLayout>
 
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/post_new_item_btn"
+        android:text="@string/post_new_item"/>
+
+
 
 </RelativeLayout>

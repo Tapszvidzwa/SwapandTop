@@ -63,12 +63,60 @@
         android:text="Jewellery" />
 
     <TextView
-        android:id="@+id/middle_view"
+        android:id="@+id/select_category_txtV"
         android:layout_width="wrap_content"
-        android:textColor="@color/colorAccent"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/black"
+        android:paddingLeft="100dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="100dp"
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:layout_centerInParent="true"
         android:text="@string/front_page" />
+
+    <ImageView
+        android:id="@+id/arrow1_imgv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/vehicles"
+        android:layout_alignEnd="@+id/vehicles"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/ic_cursor" />
+
+    <ImageView
+        android:id="@+id/arrow2_imgv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        android:layout_alignStart="@+id/electronics"
+        android:layout_alignTop="@+id/arrow1_imgv"
+        android:layout_marginStart="12dp"
+        android:rotation="70"
+        android:src="@drawable/ic_cursor" />
+
+    <ImageView
+        android:id="@+id/arrow3_imgv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        android:layout_alignEnd="@+id/furniture"
+        android:layout_alignTop="@+id/arrow4_imgv"
+        android:layout_marginEnd="12dp"
+        android:rotation="250"
+        android:src="@drawable/ic_cursor" />
+
+    <ImageView
+        android:id="@+id/arrow4_imgv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        android:layout_alignStart="@+id/jewellery"
+        android:layout_alignTop="@+id/jewellery"
+        android:layout_marginTop="11dp"
+        android:rotation="180"
+        android:src="@drawable/ic_cursor" />
 
 </RelativeLayout>
