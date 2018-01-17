@@ -6,8 +6,34 @@
     android:layout_height="match_parent"
     tools:context="com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Electronics.ElectronicsFrontPageActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme">
 
-    <GridLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/electronics_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimary" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:drawable/screen_background_light"
@@ -20,10 +46,11 @@
         android:verticalSpacing="8dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true">
-    </GridLayout>
+    </GridView>
 
 
     <Button
+        android:id="@+id/post_new_item_btn"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
@@ -32,5 +59,14 @@
         android:text="@string/post_new_item"/>
 
 
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+/>
 
 </RelativeLayout>

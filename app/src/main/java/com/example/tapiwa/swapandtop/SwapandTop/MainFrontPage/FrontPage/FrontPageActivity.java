@@ -10,7 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tapiwa.swapandtop.R;
+import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Cars.CarsFrontPageActivity;
 import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Electronics.ElectronicsFrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Furniture.FurnitureFrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Jewellery.JewelleryFrontPageActivity;
 
 import static java.lang.Thread.sleep;
 
@@ -69,8 +72,8 @@ public class FrontPageActivity extends AppCompatActivity {
                 vehiclesTab.setAlpha(0.6f);
                 vehiclesTab.setTextColor(getResources().getColor(R.color.colorAccent));
 
-                Intent openElectronics = new Intent(FrontPageActivity.this, ElectronicsFrontPageActivity.class);
-                startActivity(openElectronics);
+                Intent openVehicles = new Intent(FrontPageActivity.this, CarsFrontPageActivity.class);
+                startActivity(openVehicles);
 
             }
         });
@@ -81,8 +84,8 @@ public class FrontPageActivity extends AppCompatActivity {
                 jewelleryTab.setAlpha(0.6f);
                 jewelleryTab.setTextColor(getResources().getColor(R.color.colorAccent));
 
-                Intent openElectronics = new Intent(FrontPageActivity.this, ElectronicsFrontPageActivity.class);
-                startActivity(openElectronics);
+                Intent openJewellery = new Intent(FrontPageActivity.this, JewelleryFrontPageActivity.class);
+                startActivity(openJewellery);
 
             }
         });
@@ -93,8 +96,8 @@ public class FrontPageActivity extends AppCompatActivity {
                 furnitureTab.setAlpha(0.6f);
                 furnitureTab.setTextColor(getResources().getColor(R.color.colorAccent));
 
-                Intent openElectronics = new Intent(FrontPageActivity.this, ElectronicsFrontPageActivity.class);
-                startActivity(openElectronics);
+                Intent openFurniture = new Intent(FrontPageActivity.this, FurnitureFrontPageActivity.class);
+                startActivity(openFurniture);
 
             }
         });

@@ -18,7 +18,10 @@
 
     <!-- Strings related to Activities and Fragments -->
     <string name="front_page">Select category</string>
-
+    <string name="electronics">Electronics</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="furniture">Furniture</string>
+    <string name="jewellery">Jewellery</string>
 
     <!-- Strings related to UI responses -->
     <string name="invalid_first_name">Please enter First Name here</string>
@@ -35,6 +38,10 @@
 
     <!-- Strings related to Firebase References -->
     <string name="users_db_ref">Users</string>
+    <string name="electronics_db_ref">Electronics</string>
+    <string name="electronics_storage_ref">Electronics_Storage</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
