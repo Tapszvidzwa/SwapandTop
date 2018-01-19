@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SwapandTop.Authentication.LoginScreenActivity" />
-        <activity android:name=".FrontPage.FrontPageActivity" />
+        <activity android:name=".SwapandTop.Main.FrontPage.FrontPageActivity" />
+        <activity android:name=".SwapandTop.Main.Furniture.FurnitureFrontPageActivity" />
+        <activity android:name=".SwapandTop.Main.Jewellery.JewelleryFrontPageActivity" />
+        <activity android:name=".SwapandTop.Main.Vehicles.VehiclesFrontPageActivity" />
         <activity android:name=".SwapandTop.Authentication.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,11 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SwapandTop.MainFrontPage.FrontPage.FrontPageActivity" />
-        <activity android:name=".SwapandTop.MainFrontPage.Electronics.ElectronicsFrontPageActivity" />
-        <activity android:name=".SwapandTop.MainFrontPage.Cars.CarsFrontPageActivity" />
-        <activity android:name=".SwapandTop.MainFrontPage.Furniture.FurnitureFrontPageActivity" />
-        <activity android:name=".SwapandTop.MainFrontPage.Jewellery.JewelleryFrontPageActivity"></activity>
+        <activity android:name=".SwapandTop.Main.Electronics.ElectronicsFrontPageActivity" />
+        <activity android:name=".SwapandTop.Main.Electronics.PostItemActivity"></activity>
     </application>
 
 </manifest>

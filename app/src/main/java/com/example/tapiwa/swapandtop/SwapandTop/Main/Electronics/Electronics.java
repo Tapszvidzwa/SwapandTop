@@ -1,4 +1,4 @@
-package com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Electronics;
+package com.example.tapiwa.swapandtop.SwapandTop.Main.Electronics;
 
 /**
  * Created by tapiwa on 1/15/18.

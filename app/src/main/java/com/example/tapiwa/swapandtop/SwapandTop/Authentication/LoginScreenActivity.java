@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.tapiwa.swapandtop.R;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage.FrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.FrontPage.FrontPageActivity;
 import com.example.tapiwa.swapandtop.SwapandTop.User.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

@@ -1,4 +1,4 @@
-package com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Electronics;
+package com.example.tapiwa.swapandtop.SwapandTop.Main.Vehicles;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,12 +13,12 @@ import com.example.tapiwa.swapandtop.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ElectronicsMyItemsFragment.OnFragmentInteractionListener} interface
+ * {@link VehiclesMyItemsFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ElectronicsMyItemsFragment#newInstance} factory method to
+ * Use the {@link VehiclesMyItemsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ElectronicsMyItemsFragment extends Fragment {
+public class VehiclesMyItemsFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +30,7 @@ public class ElectronicsMyItemsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ElectronicsMyItemsFragment() {
+    public VehiclesMyItemsFragment() {
         // Required empty public constructor
     }
 
@@ -43,8 +43,8 @@ public class ElectronicsMyItemsFragment extends Fragment {
      * @return A new instance of fragment ElectronicsMyItemsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ElectronicsMyItemsFragment newInstance(String param1, String param2) {
-        ElectronicsMyItemsFragment fragment = new ElectronicsMyItemsFragment();
+    public static VehiclesMyItemsFragment newInstance(String param1, String param2) {
+        VehiclesMyItemsFragment fragment = new VehiclesMyItemsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,7 +65,7 @@ public class ElectronicsMyItemsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_electronics_my_items, container, false);
+        return inflater.inflate(R.layout.fragment_vehicles_my_items, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

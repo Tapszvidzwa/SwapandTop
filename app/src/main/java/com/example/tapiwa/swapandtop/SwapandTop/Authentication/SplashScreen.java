@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tapiwa.swapandtop.R;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage.FrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.FrontPage.FrontPageActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

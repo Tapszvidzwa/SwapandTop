@@ -1,4 +1,4 @@
-package com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage;
+package com.example.tapiwa.swapandtop.SwapandTop.Main.FrontPage;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tapiwa.swapandtop.R;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Cars.CarsFrontPageActivity;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Electronics.ElectronicsFrontPageActivity;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Furniture.FurnitureFrontPageActivity;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Jewellery.JewelleryFrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.Electronics.ElectronicsFrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.Furniture.FurnitureFrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.Jewellery.JewelleryFrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.Vehicles.VehiclesFrontPageActivity;
 
 import static java.lang.Thread.sleep;
 
@@ -72,7 +72,7 @@ public class FrontPageActivity extends AppCompatActivity {
                 vehiclesTab.setAlpha(0.6f);
                 vehiclesTab.setTextColor(getResources().getColor(R.color.colorAccent));
 
-                Intent openVehicles = new Intent(FrontPageActivity.this, CarsFrontPageActivity.class);
+                Intent openVehicles = new Intent(FrontPageActivity.this, VehiclesFrontPageActivity.class);
                 startActivity(openVehicles);
 
             }

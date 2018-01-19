@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/electronics_toolbar"
+            android:id="@+id/furniture_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -24,7 +24,7 @@
         </android.support.v7.widget.Toolbar>
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/electronics_tab"
+            android:id="@+id/furniture_tab"
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
 
 
     <Button
-        android:id="@+id/electronics_post_new_item_btn"
+        android:id="@+id/furniture_post_new_item_btn"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
@@ -45,7 +45,7 @@
 
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/container"
+        android:id="@+id/furniture_container"
         android:layout_width="match_parent"
         android:layout_marginTop="1dp"
         android:background="@android:color/white"

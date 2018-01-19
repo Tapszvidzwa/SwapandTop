@@ -1,39 +1,34 @@
-package com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.Electronics;
+package com.example.tapiwa.swapandtop.SwapandTop.Main.Furniture;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.Button;
-import android.widget.GridLayout;
-import android.widget.GridView;
-import android.support.design.widget.TabLayout;
-import android.widget.TableLayout;
-import android.widget.Toolbar;
 
 import com.example.tapiwa.swapandtop.R;
-import com.example.tapiwa.swapandtop.SwapandTop.MainFrontPage.FrontPage.FrontPageActivity;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.Electronics.ElectronicsForSaleFragment;
+import com.example.tapiwa.swapandtop.SwapandTop.Main.Electronics.ElectronicsMyItemsFragment;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
-public class ElectronicsFrontPageActivity extends AppCompatActivity
-implements ElectronicsForSaleFragment.OnFragmentInteractionListener,
-        ElectronicsMyItemsFragment.OnFragmentInteractionListener {
+public class FurnitureFrontPageActivity extends AppCompatActivity
+implements FurnitureForSaleFragment.OnFragmentInteractionListener,
+        FurnitureMyItemsFragment.OnFragmentInteractionListener {
 
     public FirebaseDatabase firebaseDatabase;
     public FirebaseStorage firebaseStorage;
     public DatabaseReference electronicsDbRef;
-    public static GridView electronicsGridView;
 
     private ViewPager mViewPager;
     private ViewPagerAdapter mViewPagerAdapter;
-    private android.support.v7.widget.Toolbar electronicsToolBar;
+    private android.support.v7.widget.Toolbar furnitureToolbar;
 
     public static String ELECTRONICS_DB_REF;
     public static String ELECTRONICS_ST0RAGE_REF;
@@ -44,16 +39,20 @@ implements ElectronicsForSaleFragment.OnFragmentInteractionListener,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_electronics__front__page);
+        setContentView(R.layout.activity_furniture__front__page);
 
         //views
-        postNewItem = findViewById(R.id.post_new_item_btn);
-        electronicsGridView = findViewById(R.id.electronics_gridV);
+        postNewItem = findViewById(R.id.furniture_post_new_item_btn);
 
         //toolbar
-        electronicsToolBar = findViewById(R.id.electronics_toolbar);
-        electronicsToolBar.setTitle(getString(R.string.electronics));
-        electronicsToolBar.setTitleTextColor(Color.WHITE);
+        furnitureToolbar = findViewById(R.id.furniture_toolbar);
+        furnitureToolbar.setTitle(getString(R.string.furniture));
+        furnitureToolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(furnitureToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        //viewpager setup
 
         //database stuff
         ELECTRONICS_DB_REF = getString(R.string.electronics_db_ref);
@@ -64,12 +63,13 @@ implements ElectronicsForSaleFragment.OnFragmentInteractionListener,
 
         //viewPager
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        mViewPager = findViewById(R.id.container);
+        mViewPager = findViewById(R.id.furniture_container);
         mViewPager.setAdapter(mViewPagerAdapter);
 
         //tablayout
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.furniture_tab);
         tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.setSelectedTabIndicatorColor(Color.WHITE);
         tabLayout.setTabTextColors(Color.WHITE, Color.WHITE);
 
 
@@ -110,6 +110,17 @@ implements ElectronicsForSaleFragment.OnFragmentInteractionListener,
         //you can leave it empty
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
 
     public class ViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -121,10 +132,10 @@ implements ElectronicsForSaleFragment.OnFragmentInteractionListener,
         public Fragment getItem(int position) {
 
             switch (position) {
-                case 0: Fragment ForSale = new ElectronicsForSaleFragment();
+                case 0: Fragment ForSale = new FurnitureForSaleFragment();
                 return ForSale;
 
-                case 1: Fragment MyItems = new ElectronicsMyItemsFragment();
+                case 1: Fragment MyItems = new FurnitureMyItemsFragment();
                 return MyItems;
 
                 default:
@@ -142,9 +153,9 @@ implements ElectronicsForSaleFragment.OnFragmentInteractionListener,
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "For Sale";
+                    return "FOR SALE";
                 case 1:
-                    return "My ITEMS";
+                    return "MY ITEMS";
             }
             return null;
         }
